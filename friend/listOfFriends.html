@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<center>
+<ul ng-repeat=" c in friendslist">
+<li ng-hide="c.from==currentUser.username">{{c.from}}</li>
+<li ng-hide="c.to==currentUser.username">{{c.to}}</li>
+</center>
+</div>
+</ul>
+</body>
+</html>

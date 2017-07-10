@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+$('#contact-form').bootstrapValidator({
+//  live: 'disabled',
+  message: 'This value is not valid',
+  feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+  },
+  fields: {
+      Name: {
+          validators: {
+              notEmpty: {
+                  message: 'The Name is required and cannot be empty'
+              }
+          }
+      },
+      email: {
+          validators: {
+              notEmpty: {
+                  message: 'The email address is required'
+              },
+              emailAddress: {
+                  message: 'The email address is not valid'
+              }
+          }
+      },
+      Message: {
+          validators: {
+              notEmpty: {
+                  message: 'The Message is required and cannot be empty'
+              }
+          }
+      }
+  }
+});
+</script>
+<style type="text/css">
+.contact-form{ margin-top:15px;}
+.contact-form .textarea{ min-height:220px; resize:none;}
+.form-control{ box-shadow:none; border-color:#eee; height:49px;}
+.form-control:focus{ box-shadow:none; border-color:#00b09c;}
+.form-control-feedback{ line-height:50px;}
+.main-btn{ background:#00b09c; border-color:#00b09c; color:#fff;}
+.main-btn:hover{ background:#00a491;color:#fff;}
+.form-control-feedback {
+line-height: 50px;
+top: 0px;
+}
+</style>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+</head>
+<body>
+{{message}}
+<form>
+
+<div class="container">
+	<div class="row">
+		<form role="form" id="contact-form" class="contact-form">
+                    <div class="row">
+                		<div class="col-md-6">
+                  		<div class="form-group">
+                            <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Title" ng-model="blog.title">
+                  		</div>
+                  	</div>
+                    	
+                  	</div>
+                  	<div class="row">
+                  		<div class="col-md-12">
+                  		<div class="form-group">
+                            <textarea class="form-control textarea" rows="10" columns="30" name="Message" id="Message" placeholder="description" ng-model="blog.body"></textarea>
+                  		</div>
+                  	</div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                  <button type="submit" class="btn main-btn pull-right" ng-click="saveBlogPost()">Post</button>
+                  </div>
+                  </div>
+                </form>
+	</div>
+</div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>body {
+    background-color: #eee;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+            <form class="form-horizontal" role="form">
+                <h2>Registration Form</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="name" placeholder="name" required=" " title="Name should have  min 3 char and max 15 ,no numbers" pattern="[A-Za-z]{3,15}" ng-model="user.name" class="form-control" autofocus>
+                      </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Username</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="username" required=" " name="name" title="Name should have  min 3 char and max 15 ,no numbers" pattern="[A-Za-z]{3,15}" ng-model="user.username"  class="form-control" autofocus>
+                       
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" required="" title="invalid email address" placeholder="Enter you Email"  ng-model="user.email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" placeholder="Password" ng-model="user.password" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                     <label for="firstName" class="col-sm-3 control-label">Mobile Number</label>
+                    <div class="col-sm-9">
+                    <input type="number" name="PhoneNumber"  required="" minlength="10" maxlength="10" pattern="[789][0-9]{9}" title="Phone number with 7-9 and remaing 9 digit with 0-9" ng-model="user.phonenumber" class="form-control">
+                       
+                      </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Role</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="femaleRadio" ng-model="user.role" value="student">Student
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="maleRadio" ng-model="user.role" value="alumini">Alumini
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="uncknownRadio" ng-model="user.role" value="employee">Employee
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+             
+    
+                
+            <div class="row">
+  <div class="col-sm-12">
+    <div class="text-center">
+      <button class="btn btn-primary" id="singlebutton" ng-click="registerUser()"> Register</button>
+    </div>
+  </div>
+</div>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+</body>
+</html>

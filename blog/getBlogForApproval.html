@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body  {
+    background-image: url("home/white.jpg");
+
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p><font size="5" color="blue"><center><div>{{blogPost.title}}</div></center></font></p>
+<br/>
+<p align="right"><span><strong>Created By:</strong>{{blogPost.createdBy.username}}</span></p>
+ <p align="right"><span><strong>on: </strong>{{blogPost.createdOn | date:'medium'}}</span></p>
+          
+          </div>
+          <div class="panel-body">
+          {{blogPost.body}}
+          
+          </div>
+</div>
+</div>
+</div>
+
+<div >
+<form>
+<div>
+<input type="radio" ng-model="blogPost.approved" value="true">Approve<br>
+<input type="radio" ng-model="blogPost.approved" value="false"> Reject<br>
+<a href="" ng-click="updateApproval()" class="button">Update</a>
+<a href="#getAllBlogs" class="button">Back</a>
+</form>
+</div>
+</div>
+</body>
+</html>

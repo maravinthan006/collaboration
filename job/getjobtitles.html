@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body  {
+    background-image: url("_home/img9.jpg");
+
+}
+
+</style>
+</head>
+<body>
+<div>
+<img src="_home/img10.png" alt="Mountain View" style="width:304px;height:228px;">
+</div>
+<table align="center">
+
+<tr ng-repeat="job in jobs">
+
+<td><a href="" ng-click=jobDetail(job.id)>{{job.jobtitle}}</a></td>
+</tr>
+
+</table>
+<div class="container">
+<div ng-show="showJobDetails">
+
+<b>Description</b> : {{job.jobdescription}}<br><br>
+<b>Skills Required</b> :{{job.skillsrequired}}<br><br>
+<b>location</b>:{{job.joblocation}}<br><br>
+<b>Years Of Experience</b>:{{job.yrsOfExp}}<br><br>
+<b>Company</b>:{{job.company}}<br><br>
+<b>Posted On</b>{{job.postedOn | date:'yyyy:MM:dd'}}<br><br>
+
+<b ng-show="currentUser.role=='Admin'">Active</b>{{job.active}}<br><br>
+</div>
+</div>
+</body>
+</html>
