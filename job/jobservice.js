@@ -1,7 +1,7 @@
 app.factory('JobService',function($http){
 	var jobService={}
 	
-	var BASE_URL="http://localhost:8085/collabotrationBackEnd"
+	var BASE_URL="http://localhost:8085/collaborationBackEnd"
 	
 	jobService.savejobpost=function(job){
 		return $http.post(BASE_URL + "/saveJob",job)
