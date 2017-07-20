@@ -1,9 +1,5 @@
 package com.niit.dao;
 
-
-
-
-
 import java.util.List;
 
 import org.hibernate.Session;

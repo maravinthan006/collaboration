@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.UserDao;
 import com.niit.model.User;
@@ -35,6 +36,7 @@ public ResponseEntity<?> registerUser(@RequestBody User user){
 		return new ResponseEntity<Error>(error , HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
+
 @RequestMapping(value="/login",method=RequestMethod.POST)
 public ResponseEntity<?> login(@RequestBody User user,HttpSession session){
 	
@@ -92,6 +94,6 @@ public ResponseEntity<?> updateUser(@RequestBody User updatedUserDetails,HttpSes
 		userDao.updateUser(updatedUserDetails);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
-
 }
+
 }
